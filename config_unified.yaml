@@ -1,0 +1,84 @@
+# =============================================================================
+# Chuẩn hóa dữ liệu YOLOv8 (6 lớp lá)
+# Được đọc bởi: setup_all_data.py
+# =============================================================================
+
+project:
+  name: "Mat Than Nong"
+  description: "Gộp RAW_DATA_CLEAN + RAW_DATA_FIELD → datasets/leaf_data (YOLOv8)"
+
+paths:
+  raw_clean: "./RAW_DATA_CLEAN"
+  raw_field: "./RAW_DATA_FIELD"
+  output: "./datasets/leaf_data"
+  verification_dir: "./runs/data_verification"
+
+# Bật/tắt từng nguồn (nếu CLEAN và FIELD trùng nội dung, có thể tắt một bên để tránh nhân đôi)
+ingest:
+  use_raw_clean: true
+  use_raw_field: true
+
+split:
+  train: 0.85
+  val: 0.15
+  seed: 42
+
+# 6 lớp (0–5). Không có lớp "garbage" trong nhãn — thư mục garbage → file .txt rỗng.
+class_names:
+  - cafe_gisat          # 0
+  - cafe_dommatcua      # 1
+  - cafe_khoe           # 2
+  - saurieng_chayla     # 3
+  - saurieng_domtao     # 4
+  - saurieng_khoe       # 5
+
+# Tên thư mục con (Durian / train|val|test) → id lớp chuẩn
+durian_folder_map:
+  ALGAL_LEAF_SPOT: 4
+  LEAF_BLIGHT: 3
+  HEALTHY_LEAF: 5
+  PHOMOPSIS_LEAF_SPOT: 3
+  ALLOCARIDARA_ATTACK: 3
+
+# Coffee CSV (coffee-leaf-diseases): cột miner, rust, phoma — ưu tiên từ trên xuống
+coffee_csv:
+  train_file: "train_classes.csv"
+  test_file: "test_classes.csv"
+  images_subdir: "coffee-leaf-diseases"
+  # Nếu nhiều cột = 1: lấy theo thứ tự ưu tiên
+  priority:
+    - { column: "rust",  class_id: 0 }
+    - { column: "phoma", class_id: 1 }
+    - { column: "miner", class_id: 1 }
+  healthy_class_id: 2   # khi cả ba cột đều 0
+
+# RoCoLE (Labelbox JSON trong Label): External ID → file trong Photos/
+field_roco:
+  csv_glob: "RoCoLE-csv.csv"
+  photos_subdir: "Photos"
+  annotations_subdir: "Annotations"
+
+field_roco_classification:
+  healthy: 2
+  rust_level_1: 0
+  rust_level_2: 0
+  rust_level_3: 0
+  rust_level_4: 0
+  red_spider_mite: 1
+
+# Prefix tên file đầu ra để tránh trùng (clean vs field)
+filename_prefix:
+  clean: "c_"
+  field: "f_"
+
+processing:
+  min_file_size_bytes: 1024
+  visualization_samples: 10
+  overwrite_output: true
+
+# Bbox mặc định cho classification / cây thư mục (không có polygon)
+default_bbox:
+  x_center: 0.5
+  y_center: 0.5
+  width: 0.95
+  height: 0.95

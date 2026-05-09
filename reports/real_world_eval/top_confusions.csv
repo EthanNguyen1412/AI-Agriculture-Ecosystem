@@ -1,0 +1,10 @@
+true_label,pred_label,count
+ALLOCARIDARA_ATTACK,saurieng_chayla,183
+PHOMOPSIS_LEAF_SPOT,saurieng_chayla,172
+cafe_gisat,cafe_dommatcua,116
+cafe_khoe,cafe_dommatcua,96
+cafe_dommatcua,cafe_gisat,60
+PHOMOPSIS_LEAF_SPOT,saurieng_khoe,2
+PHOMOPSIS_LEAF_SPOT,saurieng_domtao,2
+saurieng_chayla,saurieng_khoe,1
+saurieng_chayla,saurieng_domtao,1

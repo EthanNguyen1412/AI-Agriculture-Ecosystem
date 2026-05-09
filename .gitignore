@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+.eggs/
+
+# Large / regenerable data (GitHub file limit ~100 MB; repo should stay clone-friendly)
+datasets/
+RAW_DATA_CLEAN/
+RAW_DATA_FIELD/
+
+# Full project archive (~5 GB) — publish via GitHub Releases or cloud storage instead
+exports/Coffee_Durian_AI.zip
+
+# Local / IDE
+.idea/
+.vscode/

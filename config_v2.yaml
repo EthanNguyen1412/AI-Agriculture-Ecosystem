@@ -1,0 +1,121 @@
+# FILE: config_v2.yaml
+# DÙNG CHO: Giai đoạn 2 (Fine-tuning với Data Thực địa/Detection)
+
+# ============== ĐƯỜNG DẪN ==============
+paths:
+  raw_data: "./RAW_DATA_FIELD"       # Nơi chứa các dataset: RoCoLe, BRACOL, Roboflow...
+  output: "./dataset_v2_field"       # Nơi xuất ra dataset chuẩn YOLO
+
+# ============== TỶ LỆ CHIA DATA ==============
+split:
+  train: 0.90      # Fine-tune ưu tiên thêm dữ liệu học
+  val: 0.10        # Giảm val nhưng vẫn đủ theo dõi mAP
+  test: 0.00
+  seed: 42
+
+# ============== DANH SÁCH LỚP (GIỐNG HỆT V1) ==============
+label_mapping:
+  # Class 0: Cà phê - Gỉ sắt
+  0:
+    standard_name: "cafe_gisat"
+    aliases:
+      - "cafe_gisat"
+      - "coffee_rust"
+      - "rust"
+      - "coffee_leaf_rust"
+      - "rust_level_1"  # Các biến thể trong RoCoLe
+      - "rust_level_2"
+      - "rust_level_3"
+      - "rust_level_4"
+
+  # Class 1: Cà phê - Đốm mắt cua
+  1:
+    standard_name: "cafe_dommatcua"
+    aliases:
+      - "cafe_dommatcua"
+      - "cercospora"
+      - "brown_leaf_spot"
+      - "brown_eye_spot"
+
+  # Class 2: Cà phê - Khỏe mạnh
+  2:
+    standard_name: "cafe_khoe"
+    aliases:
+      - "cafe_khoe"
+      - "healthy"
+      - "coffee_healthy"
+
+  # Class 3: Sầu riêng - Cháy lá
+  3:
+    standard_name: "saurieng_chayla"
+    aliases:
+      - "saurieng_chayla"
+      - "leaf_blight"
+      - "leaf-blight" # Roboflow hay dùng gạch ngang
+      - "durian_blight"
+
+  # Class 4: Sầu riêng - Đốm tảo
+  4:
+    standard_name: "saurieng_domtao"
+    aliases:
+      - "saurieng_domtao"
+      - "algal_leaf_spot"
+      - "algal-leaf-spot"
+      - "algal_spot"
+
+  # Class 5: Sầu riêng - Khỏe mạnh
+  5:
+    standard_name: "saurieng_khoe"
+    aliases:
+      - "saurieng_khoe"
+      - "no_disease"
+      - "healthy_leaf"
+      - "no-disease"
+
+  # Class 6: Rác / Nền
+  6:
+    standard_name: "garbage"
+    aliases:
+      - "garbage"
+      - "background"
+      - "selfie"
+      - "negative"
+
+# ============== XỬ LÝ LABEL CÓ SẴN ==============
+label_generation:
+  # VÌ LÀ DATA THỰC ĐỊA (ĐÃ CÓ NHÃN), PHẢI TẮT CÁI NÀY
+  default_bbox:
+    enabled: false 
+    
+  existing_labels:
+    remap_class_ids: true    # BẬT: Ánh xạ ID từ dataset gốc sang chuẩn của mình
+    validate_bbox: true      # Kiểm tra lỗi bounding box
+    fix_invalid_bbox: true   # Tự động sửa lỗi box thò ra ngoài ảnh
+
+# ============== XỬ LÝ ==============
+processing:
+  copy_method: "copy"
+  overwrite_existing: true
+  
+  quality_checks:
+    remove_duplicates: true
+    check_corrupted: true
+    min_file_size: 2048       # Loại ảnh quá nhỏ để giảm nhiễu nhãn
+
+# ============== ĐẦU RA ==============
+output:
+  create_data_yaml: true
+  save_statistics: true
+  create_visualizations: true
+
+# =============================================================================
+# MAT THÂN NÔNG — Chuẩn hóa thống nhất (6 lớp lá)
+# Quét thực tế RAW_DATA_FIELD: Coffee (Annotations/RoCoLE-csv.csv + Photos/),
+# Durian (train|val|test/<TÊN_LỚP>/), garbage/ (nhãn rỗng).
+# Chạy: python setup_all_data.py   | Cấu hình: config_unified.yaml
+# =============================================================================
+mat_than_nong:
+  unified_pipeline_script: "./setup_all_data.py"
+  unified_config: "./config_unified.yaml"
+  yolo_dataset_yaml: "./datasets/leaf_data/data.yaml"
+  class_count: 6

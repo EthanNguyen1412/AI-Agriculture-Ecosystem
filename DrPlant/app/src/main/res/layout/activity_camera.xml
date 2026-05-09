@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity">
+
+    <androidx.camera.view.PreviewView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/previewView" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/capture"
+        android:src="@drawable/ic_camera_btn"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/camera_capture_content_description"
+        android:background="@android:color/transparent"
+        app:tint="#FFFFFF" />
+
+
+
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10sp"
+        app:tint="#FFFFFF"
+        android:id="@+id/toggleFlash"
+        android:src="@drawable/ic_flash_on_btn"
+        android:contentDescription="@string/camera_flash_content_description"
+        android:background="@android:color/transparent" />
+
+
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10sp"
+        app:tint="#FFFFFF"
+        android:id="@+id/historyRedirect"
+        android:src="@drawable/ic_list_btn"
+        android:contentDescription="@string/history_button"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_below="@id/toggleFlash"
+        android:layout_marginEnd="10sp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_camera_flip_btn"
+        android:id="@+id/flipCamera"
+        android:contentDescription="@string/camera_flip_content_description"
+        android:background="@android:color/transparent"
+        app:tint="#FFFFFF"
+        />
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_below="@id/flipCamera"
+        android:layout_marginEnd="10sp"
+        android:layout_margin="10sp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_add_from_gallery_btn"
+        android:id="@+id/addFromGallery"
+        android:contentDescription="@string/camera_gallery_content_description"
+        android:background="@android:color/transparent"
+        app:tint="#FFFFFF"/>
+
+    <LinearLayout
+        android:id="@+id/uploadLoadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/uploadLoadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/camera_uploading"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

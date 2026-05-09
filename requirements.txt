@@ -1,0 +1,25 @@
+# --- Core AI & Training ---
+torch
+torchvision
+torchaudio
+ultralytics
+opencv-python
+albumentations
+matplotlib
+pandas
+scikit-learn
+
+# --- Data Processing Utilities ---
+pyyaml
+tqdm
+requests
+
+# --- API & Server ---
+fastapi
+uvicorn[standard]
+gunicorn
+python-multipart
+Pillow
+
+# --- Note ---
+# Nếu bạn dùng GPU CUDA, có thể cài lại bộ torch theo đúng CUDA bằng lệnh từ pytorch.org

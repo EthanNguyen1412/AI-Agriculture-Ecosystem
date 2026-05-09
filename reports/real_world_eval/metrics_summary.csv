@@ -1,0 +1,16 @@
+metric_or_class,value_1,value_2,value_3,value_4,value_5,value_6
+num_images_known_gt,1174
+accuracy_top1,0.460818
+macro_precision,0.309425
+macro_recall,0.385389
+macro_f1,0.326574
+,
+class,support,pred_count,tp,precision,recall,f1
+ALLOCARIDARA_ATTACK,183,0,0,0.0,0.0,0.0
+PHOMOPSIS_LEAF_SPOT,176,0,0,0.0,0.0,0.0
+cafe_dommatcua,60,212,0,0.0,0.0,0.0
+cafe_gisat,128,72,12,0.166667,0.09375,0.12
+cafe_khoe,96,0,0,0.0,0.0,0.0
+saurieng_chayla,188,541,186,0.343808,0.989362,0.510288
+saurieng_domtao,147,150,147,0.98,1.0,0.989899
+saurieng_khoe,196,199,196,0.984925,1.0,0.992405

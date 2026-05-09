@@ -1,0 +1,9 @@
+true_label\pred_label,ALLOCARIDARA_ATTACK,PHOMOPSIS_LEAF_SPOT,cafe_dommatcua,cafe_gisat,cafe_khoe,saurieng_chayla,saurieng_domtao,saurieng_khoe
+ALLOCARIDARA_ATTACK,0,0,0,0,0,183,0,0
+PHOMOPSIS_LEAF_SPOT,0,0,0,0,0,172,2,2
+cafe_dommatcua,0,0,0,60,0,0,0,0
+cafe_gisat,0,0,116,12,0,0,0,0
+cafe_khoe,0,0,96,0,0,0,0,0
+saurieng_chayla,0,0,0,0,0,186,1,1
+saurieng_domtao,0,0,0,0,0,0,147,0
+saurieng_khoe,0,0,0,0,0,0,0,196

@@ -1,0 +1,7 @@
+metric,value
+num_images,1290
+num_detections,1297
+avg_infer_ms_per_image,57.66
+approx_fps,17.343
+num_images_with_gt,1290
+num_images_with_known_gt,1174

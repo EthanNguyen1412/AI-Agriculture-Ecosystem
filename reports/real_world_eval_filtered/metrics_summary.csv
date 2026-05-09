@@ -1,0 +1,14 @@
+metric_or_class,value_1,value_2,value_3,value_4,value_5,value_6
+num_images_known_gt,815
+accuracy_top1,0.663804
+macro_precision,0.525806
+macro_recall,0.513852
+macro_f1,0.51812
+,
+class,support,pred_count,tp,precision,recall,f1
+cafe_dommatcua,60,212,0,0.0,0.0,0.0
+cafe_gisat,128,72,12,0.166667,0.09375,0.12
+cafe_khoe,96,0,0,0.0,0.0,0.0
+saurieng_chayla,188,186,186,1.0,0.989362,0.994652
+saurieng_domtao,147,148,147,0.993243,1.0,0.99661
+saurieng_khoe,196,197,196,0.994924,1.0,0.997455

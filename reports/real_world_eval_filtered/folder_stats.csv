@@ -1,0 +1,5 @@
+source_folder,num_detections,avg_confidence
+ALGAL_LEAF_SPOT,147,0.980334
+HEALTHY_LEAF,196,0.985881
+LEAF_BLIGHT,190,0.978342
+images,400,0.983355

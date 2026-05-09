@@ -1,0 +1,31 @@
+project: "Mat Than Nong - Final Training"
+
+# YOLOv8-standard dataset keys
+path: "C:/Coffee_Durian_AI/datasets/leaf_data_balanced"
+train: "train/images"
+val: "val/images"
+nc: 6
+names:
+  - "cafe_gisat"
+  - "cafe_dommatcua"
+  - "cafe_khoe"
+  - "saurieng_chayla"
+  - "saurieng_domtao"
+  - "saurieng_khoe"
+
+training:
+  model: "yolov8n.pt"
+  epochs: 100
+  imgsz: 640
+  batch: 16
+  device: 0
+  project: "runs/detect"
+  name: "train_final"
+  patience: 30
+  workers: 8
+  amp: true
+  cos_lr: true
+
+export:
+  tflite: true
+  onnx: true
