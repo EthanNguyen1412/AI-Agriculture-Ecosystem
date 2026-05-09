@@ -8,10 +8,10 @@ Hệ sinh thái AI phục vụ **chẩn đoán bệnh trên lá** cho **cà phê
 |-----|-----------|------------|
 | 1 | `cafe_gisat` | Cà phê — gỉ sắt |
 | 2 | `cafe_dommatcua` | Cà phê — đốm mắt cua |
-| 3 | `cafe_khoe` | Cà phê — khô héo |
+| 3 | `cafe_khoe` | Cà phê — khỏe mạnh (lá khỏe) |
 | 4 | `saurieng_chayla` | Sầu riêng — cháy lá |
 | 5 | `saurieng_domtao` | Sầu riêng — đốm tảo |
-| 6 | `saurieng_khoe` | Sầu riêng — khô héo |
+| 6 | `saurieng_khoe` | Sầu riêng — khỏe mạnh (lá khỏe) |
 
 ## Công nghệ chính
 
