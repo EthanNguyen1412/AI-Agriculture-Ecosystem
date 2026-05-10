@@ -15,6 +15,9 @@ RAW_DATA_FIELD/
 # Full project archive (~5 GB) — publish via GitHub Releases or cloud storage instead
 exports/Coffee_Durian_AI.zip
 
+# Report templates (keep locally if needed)
+MAU-TRINH-BAY-*
+
 # Local / IDE
 .idea/
 .vscode/
