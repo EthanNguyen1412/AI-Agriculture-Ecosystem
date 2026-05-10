@@ -29,7 +29,7 @@ Hệ sinh thái AI phục vụ **chẩn đoán bệnh trên lá** cho **cà phê
 | `eval_real_images.py`, `summarize_report.py` | Đánh giá & tổng hợp báo cáo |
 | `app.py` | API chẩn đoán ảnh |
 | `export_tflite.py` | Hỗ trợ xuất TFLite |
-| `train_final17/` | **Kết quả huấn luyện:** biểu đồ, `results.csv`, `weights/` (`.pt`, `.onnx`, SavedModel, TFLite) |
+| `train_final17/` | **Kết quả huấn luyện:** biểu đồ, `results.csv`, `weights/` (`.pt`, `.onnx`; TFLite xuất qua `export_tflite.py` → `exports/`) |
 | `exports/` | `best.tflite` (export gọn) |
 | `reports/` | CSV đánh giá thực địa (`real_world_eval`, …) |
 | `runs/` | Run kiểm tra dữ liệu và một số artifact validation |

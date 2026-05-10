@@ -18,3 +18,8 @@ exports/Coffee_Durian_AI.zip
 # Local / IDE
 .idea/
 .vscode/
+
+# Regenerable / accidental artifacts
+train_final17/weights/best_saved_model/
+calibration_image_sample_data_*.npy
+rebalance_report_dryrun.txt
