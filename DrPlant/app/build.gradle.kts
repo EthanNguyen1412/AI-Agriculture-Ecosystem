@@ -2,6 +2,7 @@ import org.gradle.kotlin.dsl.implementation
 
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,4 +60,7 @@ dependencies {
 
     // ONNX Runtime for Android
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.24.3")
+    // Firebase Authentication
+    implementation(platform("com.google.firebase:firebase-bom:34.17.0"))
+    implementation("com.google.firebase:firebase-auth")
 }
