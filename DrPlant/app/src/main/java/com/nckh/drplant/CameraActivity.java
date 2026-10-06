@@ -24,6 +24,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import com.google.firebase.auth.FirebaseAuth;
 import androidx.camera.core.AspectRatio;
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
@@ -130,6 +132,19 @@ public class CameraActivity extends AppCompatActivity {
             startActivity(new Intent(CameraActivity.this, HistoryActivity.class));
         });
         addFromGallery.setOnClickListener(v -> openGalleryPicker());
+        findViewById(R.id.logoutButton).setOnClickListener(v ->
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.auth_logout_title)
+                        .setMessage(R.string.auth_logout_message)
+                        .setPositiveButton(R.string.auth_logout_confirm, (d, w) -> {
+                            FirebaseAuth.getInstance().signOut();
+                            Intent intent = new Intent(this, LoginActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+                        })
+                        .setNegativeButton(R.string.auth_logout_cancel, null)
+                        .show());
     }
 
     // Mở bộ chọn ảnh của hệ thống để người dùng chọn ảnh từ thư viện.
