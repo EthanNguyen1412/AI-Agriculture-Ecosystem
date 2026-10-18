@@ -14,3 +14,7 @@
 .cxx
 local.properties
 app/google-services.json
+__pycache__/
+*.pyc
+BaoCaoTienDo_DrPlant_Mobile_updated.docx
+NoiDung_ThuyetTrinh_DrPlant_updated.docx

@@ -55,7 +55,7 @@
             android:label="@string/history_activity_title" />
         <activity
             android:name=".StatisticalActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/statistical_activity_title" />
 
     </application>

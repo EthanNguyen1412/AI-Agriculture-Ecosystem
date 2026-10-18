@@ -2,7 +2,17 @@ import org.gradle.kotlin.dsl.implementation
 
 plugins {
     alias(libs.plugins.android.application)
-    id("com.google.gms.google-services")
+}
+
+// Place Firebase config at app/google-services.json, then rebuild.
+val googleServicesFile = file("google-services.json")
+if (googleServicesFile.exists()) {
+    apply(plugin = "com.google.gms.google-services")
+} else {
+    logger.warn(
+        "Missing google-services.json — Firebase Auth will not be configured until you add " +
+            "DrPlant/app/google-services.json"
+    )
 }
 
 android {

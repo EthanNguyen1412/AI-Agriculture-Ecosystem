@@ -131,6 +131,12 @@ public class CameraActivity extends AppCompatActivity {
             }
             startActivity(new Intent(CameraActivity.this, HistoryActivity.class));
         });
+        findViewById(R.id.statsRedirect).setOnClickListener(v -> {
+            if (isUploadingDiagnosis) {
+                return;
+            }
+            startActivity(new Intent(CameraActivity.this, StatisticalActivity.class));
+        });
         addFromGallery.setOnClickListener(v -> openGalleryPicker());
         findViewById(R.id.logoutButton).setOnClickListener(v ->
                 new AlertDialog.Builder(this)
