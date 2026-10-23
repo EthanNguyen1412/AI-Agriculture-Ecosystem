@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nút chụp: vòng ngoài trắng dày, lõi tối để biểu tượng máy ảnh luôn rõ. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#E6101A12" />
+    <stroke
+        android:width="4dp"
+        android:color="#FFFFFFFF" />
+</shape>
