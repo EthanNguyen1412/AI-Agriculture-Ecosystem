@@ -1,3 +1,4 @@
+import java.util.Properties
 import org.gradle.kotlin.dsl.implementation
 
 plugins {
@@ -15,6 +16,14 @@ if (googleServicesFile.exists()) {
     )
 }
 
+// Tài khoản Gmail dùng để gửi mã OTP, đọc từ DrPlant/local.properties (file này không đưa lên Git).
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val mailSender = localProps.getProperty("mail.sender", "").trim()
+val mailPassword = localProps.getProperty("mail.password", "").trim()
+
 android {
     namespace = "com.nckh.drplant"
     compileSdk {
@@ -31,6 +40,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "MAIL_SENDER", "\"$mailSender\"")
+        buildConfigField("String", "MAIL_PASSWORD", "\"$mailPassword\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -51,6 +67,16 @@ android {
     packaging {
         jniLibs {
             useLegacyPackaging = false
+        }
+        resources {
+            excludes += setOf(
+                "META-INF/NOTICE.md",
+                "META-INF/LICENSE.md",
+                "META-INF/NOTICE",
+                "META-INF/LICENSE",
+                "META-INF/DEPENDENCIES",
+                "META-INF/INDEX.LIST"
+            )
         }
     }
 }
@@ -94,4 +120,8 @@ dependencies {
     // Firebase Authentication
     implementation(platform("com.google.firebase:firebase-bom:34.17.0"))
     implementation("com.google.firebase:firebase-auth")
+
+    // Gửi email OTP qua SMTP (Gmail)
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
 }
