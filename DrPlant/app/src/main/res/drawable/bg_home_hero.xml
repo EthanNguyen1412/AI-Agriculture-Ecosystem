@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Banner xanh lá dùng chung cho Trang chủ, Đăng nhập, Đăng ký -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="315"
+        android:endColor="@color/dp_primary_light"
+        android:startColor="@color/dp_primary_dark"
+        android:type="linear" />
+    <corners android:radius="28dp" />
+</shape>
