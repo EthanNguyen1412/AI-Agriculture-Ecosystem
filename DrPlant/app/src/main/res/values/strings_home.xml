@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_activity_title">Trang chủ</string>
+    <string name="home_greeting">Xin chào, %1$s!</string>
+    <string name="home_subtitle">Chúc bạn một ngày làm vườn thuận lợi</string>
+    <string name="home_default_name">bạn</string>
+    <string name="home_logout_content_description">Đăng xuất</string>
+
+    <string name="home_hero_title">Chẩn đoán bệnh lá cây</string>
+    <string name="home_hero_desc">Chụp hoặc chọn ảnh lá cà phê, sầu riêng để nhận gợi ý chẩn đoán ngay trên máy.</string>
+    <string name="home_hero_button">Bắt đầu chẩn đoán</string>
+
+    <string name="home_stat_total">Lượt chẩn đoán</string>
+    <string name="home_stat_sick">Phát hiện bệnh</string>
+
+    <string name="home_features_title">Chức năng</string>
+    <string name="home_card_history_desc">Xem lại các lần chẩn đoán</string>
+    <string name="home_card_stats_desc">Tổng quan số liệu</string>
+    <string name="home_card_area_desc">Quản lý khu vực</string>
+    <string name="home_card_plants_desc">Danh sách cây trồng</string>
+    <string name="home_card_disease_desc">Tra cứu bệnh cây</string>
+    <string name="home_badge_soon">Sắp ra mắt</string>
+
+    <string name="home_recent_title">Chẩn đoán gần đây</string>
+    <string name="home_recent_see_all">Xem tất cả</string>
+    <string name="home_recent_empty">Chưa có lần chẩn đoán nào. Hãy bắt đầu chẩn đoán đầu tiên!</string>
+    <string name="home_recent_unknown">Chưa xác định</string>
+    <string name="home_status_healthy">Khỏe mạnh</string>
+    <string name="home_status_sick">Có bệnh</string>
+    <string name="home_coming_soon">Tính năng đang phát triển</string>
+    <string name="camera_exit_content_description">Thoát camera, về trang chủ</string>
+</resources>

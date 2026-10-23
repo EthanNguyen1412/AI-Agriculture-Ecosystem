@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Bảng màu DrPlant (dùng chung cho Trang chủ, Đăng nhập, Đăng ký) -->
+    <color name="dp_primary">#2E7D32</color>
+    <color name="dp_primary_dark">#1B5E20</color>
+    <color name="dp_primary_light">#43A047</color>
+    <color name="dp_primary_soft">#E8F5E9</color>
+    <color name="dp_background">#F5F8F5</color>
+    <color name="dp_stroke">#E5ECE6</color>
+    <color name="dp_text_primary">#1F2937</color>
+    <color name="dp_text_secondary">#4B5563</color>
+    <color name="dp_text_hint">#6B7280</color>
+    <color name="dp_danger">#C62828</color>
+    <color name="dp_danger_soft">#FDECEA</color>
+    <color name="dp_muted_soft">#F1F3F2</color>
+    <color name="dp_on_banner_subtle">#D7ECDA</color>
+    <color name="dp_overlay_light">#33FFFFFF</color>
 </resources>

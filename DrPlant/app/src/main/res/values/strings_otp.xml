@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="otp_title">Xác nhận email</string>
+    <string name="otp_desc">Mã gồm 6 số đã được gửi tới</string>
+    <string name="otp_hint">Mã OTP</string>
+    <string name="otp_verify_button">Xác nhận</string>
+    <string name="otp_resend">Gửi lại mã</string>
+    <string name="otp_resend_wait">Gửi lại mã sau %1$ds</string>
+    <string name="otp_back">Quay lại sửa thông tin</string>
+    <string name="otp_sent">Đã gửi mã xác nhận tới email của bạn</string>
+    <string name="otp_demo_banner">Mã xác nhận của bạn: %1$s</string>
+    <string name="otp_check_spam">Không thấy email? Hãy kiểm tra cả mục Spam (thư rác).</string>
+    <string name="otp_error_length">Vui lòng nhập đủ 6 số</string>
+    <string name="otp_error_no_code">Chưa có mã. Hãy bấm \"Gửi lại mã\"</string>
+    <string name="otp_error_expired">Mã đã hết hạn. Hãy gửi lại mã mới</string>
+    <string name="otp_error_wrong">Mã không đúng. Còn %1$d lần thử</string>
+    <string name="otp_error_too_many">Bạn nhập sai quá nhiều lần. Hãy gửi lại mã mới</string>
+    <string name="otp_send_failed">Không gửi được email. Kiểm tra mạng rồi thử lại</string>
+    <string name="otp_not_configured">Chưa cấu hình Gmail gửi mã OTP (xem file local.properties)</string>
+    <string name="otp_register_done">Đăng ký thành công! Hãy đăng nhập để vào ứng dụng.</string>
+</resources>
