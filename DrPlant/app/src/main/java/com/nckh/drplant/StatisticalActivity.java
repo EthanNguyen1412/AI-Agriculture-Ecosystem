@@ -122,7 +122,7 @@ public class StatisticalActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.navHome).setOnClickListener(v -> {
-            Intent intent = new Intent(StatisticalActivity.this, CameraActivity.class);
+            Intent intent = new Intent(StatisticalActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
             finish();

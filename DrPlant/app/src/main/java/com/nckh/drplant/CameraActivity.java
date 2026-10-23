@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -110,7 +111,22 @@ public class CameraActivity extends AppCompatActivity {
         addFromGallery = findViewById(R.id.addFromGallery);
         uploadLoadingOverlay = findViewById(R.id.uploadLoadingOverlay);
         uploadLoadingText = findViewById(R.id.uploadLoadingText);
+        uploadLoadingText = findViewById(R.id.uploadLoadingText);
 
+        // Nút Back trên màn hình và nút Back của hệ thống đều quay về Trang chủ.
+        findViewById(R.id.backButton).setOnClickListener(v -> {
+            if (!isUploadingDiagnosis) {
+                goHome();
+            }
+        });
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (!isUploadingDiagnosis) {
+                    goHome();
+                }
+            }
+        });
         // Kiểm tra quyền truy cập camera
         if (ContextCompat.checkSelfPermission(this, permission.CAMERA) == android.content.pm.PackageManager.PERMISSION_GRANTED) {
             startCamera(cameraFacing);
@@ -151,6 +167,13 @@ public class CameraActivity extends AppCompatActivity {
                         })
                         .setNegativeButton(R.string.auth_logout_cancel, null)
                         .show());
+    }
+    // Thoát camera và quay về Trang chủ.
+    private void goHome() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+        finish();
     }
 
     // Mở bộ chọn ảnh của hệ thống để người dùng chọn ảnh từ thư viện.
