@@ -3,6 +3,7 @@ package com.nckh.drplant;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private static final String TAG = "LoginActivity";
 
     private FirebaseAuth firebaseAuth;
     private TextInputLayout emailLayout, passwordLayout;
@@ -112,9 +115,13 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     setLoading(false);
                     if (task.isSuccessful()) {
+                        Log.d(TAG, "sendPasswordResetEmail OK cho: " + email);
                         Toast.makeText(this, R.string.auth_reset_email_sent, Toast.LENGTH_LONG).show();
                     } else {
-                        showLoginError(task.getException());
+                        Exception e = task.getException();
+                        Log.e(TAG, "sendPasswordResetEmail THAT BAI", e);
+                        String detail = e == null ? "Lỗi không xác định" : e.getMessage();
+                        Toast.makeText(this, "Không gửi được: " + detail, Toast.LENGTH_LONG).show();
                     }
                 });
     }
