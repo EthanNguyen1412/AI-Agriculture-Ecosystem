@@ -47,7 +47,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
      * true  = hiện mã OTP ngay trên màn hình app (dùng khi demo, không cần gửi email).
      * false = gửi mã qua email Gmail (cần cấu hình mail.sender / mail.password trong local.properties).
      */
-    private static final boolean SHOW_OTP_IN_APP = true;
+    private static final boolean SHOW_OTP_IN_APP = false;
 
     private static final int OTP_LENGTH = 6;
     private static final long OTP_VALID_MS = 5 * 60 * 1000L;
